@@ -1,0 +1,10 @@
+﻿@using Microsoft.AspNet.Identity
+@model IEnumerable<CodeTweet.DomainModel.Tweet>
+
+@{
+    ViewBag.Title = "My Tweets";
+}
+
+<h2>Tweets by @User.Identity.GetUserName()</h2>
+
+@Html.Partial("_Tweets")
