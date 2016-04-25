@@ -1,7 +1,6 @@
 ﻿using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
-using CodeTweet.IdentityDal;
 using CodeTweet.IdentityDal.Model;
 using CodeTweet.Web.Identity;
 using CodeTweet.Web.Models;

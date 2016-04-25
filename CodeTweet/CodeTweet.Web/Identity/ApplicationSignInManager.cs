@@ -1,5 +1,4 @@
-﻿using CodeTweet.IdentityDal;
-using CodeTweet.IdentityDal.Model;
+﻿using CodeTweet.IdentityDal.Model;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using Microsoft.Owin.Security;

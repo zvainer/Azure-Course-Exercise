@@ -2,6 +2,7 @@
 using System.Threading.Tasks;
 using System.Web.Mvc;
 using CodeTweet.DomainModel;
+using CodeTweet.Queueing;
 using CodeTweet.TweetsDal;
 using CodeTweet.Web.Models;
 using Microsoft.AspNet.Identity;
@@ -12,10 +13,12 @@ namespace CodeTweet.Web.Controllers
     public class TweetsController : Controller
     {
         private readonly ITweetsRepository _repository;
+        private readonly INotificationEnqueue _queue;
 
-        public TweetsController(ITweetsRepository repository)
+        public TweetsController(ITweetsRepository repository, INotificationEnqueue queue)
         {
             _repository = repository;
+            _queue = queue;
         }
 
         public async Task<ActionResult> Index()
@@ -48,11 +51,11 @@ namespace CodeTweet.Web.Controllers
                     Timestamp = DateTime.UtcNow
                 };
                 await _repository.CreateTweetAsync(tweet);
+                await _queue.EnqueueNotificationAsync(tweet);
                 return RedirectToAction("Index");
             }
 
             return View(newTweet);
         }
-
     }
 }

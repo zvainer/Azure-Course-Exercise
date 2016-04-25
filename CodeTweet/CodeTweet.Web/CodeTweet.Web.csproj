@@ -176,6 +176,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\Modules\ApplicationIdentityModule.cs" />
+    <Compile Include="App_Start\Modules\QueueingModule.cs" />
     <Compile Include="App_Start\Modules\TweetDalModule.cs" />
     <Compile Include="Identity\ApplicationUserManager.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
@@ -269,6 +270,10 @@
     <ProjectReference Include="..\CodeTweet.IdentityDal\CodeTweet.IdentityDal.csproj">
       <Project>{74d469ca-9ce7-4dae-90f6-dabf4868d40b}</Project>
       <Name>CodeTweet.IdentityDal</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CodeTweet.Queueing\CodeTweet.Queueing.csproj">
+      <Project>{637515F3-49BB-4AA4-913C-5B0009D34C97}</Project>
+      <Name>CodeTweet.Queueing</Name>
     </ProjectReference>
     <ProjectReference Include="..\CodeTweet.TweetsDal\CodeTweet.TweetsDal.csproj">
       <Project>{df5f5ab1-26cf-4226-86c4-0eed0e7e4134}</Project>

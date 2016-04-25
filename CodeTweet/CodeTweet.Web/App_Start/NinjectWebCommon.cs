@@ -49,6 +49,7 @@ namespace CodeTweet.Web
         {
             kernel.Load<ApplicationIdentityModule>();
             kernel.Load<TweetDalModule>();
+            kernel.Load<QueueingModule>();
         }
     }
 }
